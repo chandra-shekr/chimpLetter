@@ -80,6 +80,6 @@ app.post("/loc", (req, res) => {
     res.status(200).send({ msg: "geo-tagged" });
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log("Listening on port ", port);
 })
