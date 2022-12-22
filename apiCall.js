@@ -7,7 +7,7 @@ import path from "path";
 
 function mailChimpAPI({ method, body = {}, listID = "", apiPath = "lists", section = "", memberID = "", actions = "" }) {
 
-    const Authorization = "Basic 317a36383ceb7565957fdebf1bbaeadf-us21";
+    const Authorization = `Basic ${process.env.APIKEY}`;
     const urlPath = path.join(apiPath, listID, section, memberID, actions)
     let options, methodType;
     switch (true) {
