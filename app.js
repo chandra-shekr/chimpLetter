@@ -25,13 +25,13 @@ app.use(express.json({ type: ['application/json', 'text/plain'] }));
 
 // ############################# Middlewear <end>####################################
 
-app.get("/", (req, res) => {
+app.get("/home", (req, res) => {
 
     console.log(req.cookies);
     res.sendFile(path.join(__dirname, "signup.html"));
 })
 
-app.post("/", (req, res) => {
+app.post("/home", (req, res) => {
     console.log(req.body.name, req.body.email);
     let name = req.body.name.split(" ");
     if (name.length > 1) {
